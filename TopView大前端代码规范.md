@@ -501,12 +501,12 @@ var hasMoreCommands = false;
 //  hehe
 ```
 - 若注释占整行，则注释缩进与下一行被注释说明的代码一致。
-``` javascript 
+``` javascript
 // good example
     var a = 0;
     // haha
     var haha = 1;
-    
+
 // bad example
     var a = 0;
 // heihei
@@ -552,7 +552,7 @@ function getMin(arr) {
 
 ### 特殊注释
 ``` javascript
-// example
+// good example
 // TODO: 有功能待实现。此时需要对将要实现的功能进行简单说明。
 // FIXME: 该处代码运行没问题，但可能由于时间赶或者其他原因，需要优化。
 // HACK: 为修正某些问题而写的不太好或者使用了某些诡异手段的代码。
