@@ -1,4 +1,4 @@
-﻿# TopView大前端代码规范
+﻿﻿# TopView大前端代码规范
 
 标签（空格分隔）： 代码规范
 
@@ -49,13 +49,13 @@ default:
 
 ### 空格问题
 - 二元运算符两侧要有一个空格，一元运算符与操作对象之间不需要有空格
-```
+``` javascript
 var a = !arr.length;// 有空格
 a++;                // 无空格
 a = b + c;
 ```
 - 用作代码块起始的左花括号 `{ `前必须有一个空格。
-```
+``` javascript
 // good
 if (condition) {
 }
@@ -321,11 +321,11 @@ setTimeout(
 );
 
 order.data.read(
-    'id=' + me.model.id, 
+    'id=' + me.model.id,
     function (data) {
         me.attchToModel(data.result);
         callback();
-    }, 
+    },
     300
 );
 
@@ -487,4 +487,74 @@ function TextNode(options) {
 // boolean variable
 var isReady = false;
 var hasMoreCommands = false;
+```
+
+## 注释
+### 单行注释
+- ```//``` 后跟一个空格
+``` javascript
+// good example
+// haha
+
+// bad example
+//heihei
+//  hehe
+```
+- 若注释占整行，则注释缩进与下一行被注释说明的代码一致。
+``` javascript 
+// good example
+    var a = 0;
+    // haha
+    var haha = 1;
+    
+// bad example
+    var a = 0;
+// heihei
+    var heihei = 2;
+```
+### 多行注释
+- 避免使用 `/*...*/` 这样的多行注释。有多行注释内容时，使用多个单行注释。
+``` javascript
+// good example
+// hallo
+// i am Aymax
+
+// bad example
+/* hallo
+   i am Baymax */
+```
+
+### 函数注释
+- 类型定义以 `{` 开始, 以 `}` 结束，例 ```string```、```number```
+- 建议使用插件 - DocBlockr
+``` javascript
+// good example
+/**
+ * @effect 取得数组中的最小值
+ * @param  {Array}
+ * @return {number}
+ */
+function getMin(arr) {
+    return Math.min.apply(Math,arr);
+}
+```
+
+### 文件注释
+``` javascript
+// good example
+/**
+ * @author: Aymax
+ * @date: 1921.01.01
+ * @contact: 88888888@qq.com
+ * @description: haha
+ */
+```
+
+### 特殊注释
+``` javascript
+// example
+// TODO: 有功能待实现。此时需要对将要实现的功能进行简单说明。
+// FIXME: 该处代码运行没问题，但可能由于时间赶或者其他原因，需要优化。
+// HACK: 为修正某些问题而写的不太好或者使用了某些诡异手段的代码。
+// PS: 存在一些坑要特别说明的，避免后人又踩
 ```
