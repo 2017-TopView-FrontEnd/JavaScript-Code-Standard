@@ -10,8 +10,7 @@
 ### 缩进
 - 缩进使用`2`个空格作为一个缩进层级
 - `switch`下的`case`和`default`语句需要增加一个缩进层级
-
-```
+``` javascript
 // good example
 switch (variable) {
 
@@ -53,6 +52,7 @@ a++;                // 无空格
 a = b + c;
 ```
 - 用作代码块起始的左花括号 `{ `前必须有一个空格。
+
 ``` javascript
 // good
 if (condition) {
@@ -74,8 +74,9 @@ while (condition){
 function funcName(){
 }
 ```
+
 - `if / else / for / while / function / switch / do / try / catch / finally` 关键字后，必须有一个空格。
-```
+``` javascript
 // good example
 if (condition) {
 }
@@ -97,7 +98,7 @@ while(condition) {
 })();
 ```
 - 在对象创建时，属性中的 `: `之后必须有空格，`:` 之前不允许有空格。
-```
+``` javascript
 // good example
 var obj = {
     a: 1,
@@ -113,7 +114,7 @@ var obj = {
 };
 ```
 - 函数声明、具名函数表达式、函数调用中，函数名和 `(` 之间不允许有空格。
-```
+``` javascript
 // good example
 function funcName() {
 }
@@ -132,16 +133,18 @@ var funcName = function funcName () {
 
 funcName ();
 ```
+
 - `,` 和` ;` 前不允许有空格。
-```
+``` javascript
 // good example
 callFunc(a, b);
 
 // bad example
 callFunc(a , b) ;
 ```
+
 - 在函数调用、函数声明、括号表达式、属性访问、`if / for / while / switch / catch` 等语句中，`()`和 `[]` 内紧贴括号部分不允许有空格。
-```
+``` javascript
 // good example
 
 callFunc(param1, param2, param3);
@@ -171,8 +174,9 @@ if ( num > list.length ) {
 while ( len-- ) {
 }
 ```
+
 - 单行声明的数组与对象，如果包含元素，`{}` 和 `[]` 内紧贴括号部分不允许包含空格。
-```
+``` javascript
 // good example
 var arr1 = [];
 var arr2 = [1, 2, 3];
@@ -191,13 +195,15 @@ var obj1 = { };
 var obj2 = { name: 'obj' };
 var obj3 = {name: 'obj', age: 20, sex: 1};
 ```
+
 - 行尾不得有多余的空格。
 
 ### 换行
 - 每个独立语句结束后必须换行。运算符处换行时，运算符必须在新行的行首。
 - 每行不得超过 `120` 个字符。
 - 运算符处换行时，运算符必须在新行的行首。
-```
+
+``` javascript
 // good example
 if (user.isAuthenticated()
     && user.isInRole('admin')
@@ -222,8 +228,9 @@ if (user.isAuthenticated() &&
 var result = number1 + number2 + number3 +
     number4 + number5;
 ```
-- 在函数声明、函数表达式、函数调用、对象创建、数组创建、for语句等场景中，不允许在 , 或 ; 前换行。
-```
+
+- 在函数声明、函数表达式、函数调用、对象创建、数组创建、`for` 语句等场景中，不允许在 `,` 或 `;` 前换行。
+``` javascript
 // good
 var obj = {
     a: 1,
@@ -251,8 +258,9 @@ foo(
     , callback
 );
 ```
+
 - 不同行为或逻辑的语句集，使用空行隔开，更易阅读。
-```
+``` javascript
 // 仅为按逻辑换行的示例，不代表setStyle的最优实现
 function setStyle(element, property, value) {
     if (element == null) {
@@ -262,8 +270,9 @@ function setStyle(element, property, value) {
     element.style[property] = value;
 }
 ```
+
 - 在语句的行长度超过 120 时，根据逻辑条件合理缩进。
-```
+``` javascript
 // 较复杂的逻辑条件组合，将每个条件独立一行，逻辑运算符放置在行首进行分隔，或将部分逻辑按逻辑组合进行分隔。
 // 建议最终将右括号 ) 与左大括号 { 放在独立一行，保证与 if 内语句块能容易视觉辨识。
 if (user.isAuthenticated()
@@ -351,8 +360,9 @@ var array = [
     }
 ];
 ```
-- 对于 `if...else...、try...catch...finally` 等语句，推荐使用在 `}` 号后添加一个换行 的风格，使代码层次结构更清晰，阅读性更好。
-```
+
+- 对于 `if...else...、try...catch...finally` 等语句，推荐使用在 `}` 号后添加一个换行的风格，使代码层次结构更清晰，阅读性更好。
+``` javascript
 // good example
 if (condition) {
     // ...
@@ -374,7 +384,6 @@ if (condition) {
 else {
     // some statements;
 }
-
 try {
     // some statements;
 }
@@ -385,7 +394,7 @@ catch (ex) {
 
 ### 语句
 -  在 `if / else / for / do / while` 语句中，即使只有一行，也不得省略块`{...}`。
-```
+``` javascript
 // good example
 if (condition) {
     callFunc();
@@ -396,8 +405,9 @@ if (condition) callFunc();
 if (condition)
     callFunc();
 ```
+
 - 函数定义结束不允许添加分号。
-```
+``` javascript
 // good example
 function funcName() {
 }
@@ -410,8 +420,9 @@ function funcName() {
 var funcName = function () {
 };
 ```
+
 - `IIFE` 必须在函数表达式外添加 `(`，非 `IIFE` 不得在函数表达式外添加 `(`。
-```
+``` javascript
 // good example
 var task = (function () {
    // Code
@@ -433,8 +444,9 @@ var func = (function () {
 ```
 
 ## 命名
+
 - `函数` `变量` `参数` `类的 方法/属性`使用 `Camel`命名法。
-```
+``` javascript
 // good example
 var loadingModules = {};
 function stringFormat(source) {
@@ -465,8 +477,9 @@ function TextNode(value, engine) {
     this.myenginE = engine;
 }
 ```
-- 常量 使用 `全部字母大写，单词间下划线分隔` 的命名方式。
-```
+
+- 常量使用 `全部字母大写，单词间下划线分隔` 的命名方式。
+``` javascript
 // good example
 var HTML_ENTITY = {};
 const HTML_ENTITY = {};
@@ -474,14 +487,16 @@ const HTML_ENTITY = {};
 // bad example
 var html_entity = {};
 ```
+
 -  `类` 使用 `Pascal`命名法。
-```
+``` javascript
 function TextNode(options) {
     // ...
 }
 ```
+
 - `boolean` 类型的变量使用 `is` 或 `has` 开头。
-```
+``` javascript
 // boolean variable
 var isReady = false;
 var hasMoreCommands = false;
@@ -489,7 +504,7 @@ var hasMoreCommands = false;
 
 ## 注释
 ### 单行注释
-- ```//``` 后跟一个空格
+- `//` 后跟一个空格
 ``` javascript
 // good example
 // haha
@@ -498,6 +513,7 @@ var hasMoreCommands = false;
 //heihei
 //  hehe
 ```
+
 - 若注释占整行，则注释缩进与下一行被注释说明的代码一致。
 ``` javascript
 // good example
@@ -510,6 +526,7 @@ var hasMoreCommands = false;
 // heihei
     var heihei = 2;
 ```
+
 ### 多行注释
 - 避免使用 `/*...*/` 这样的多行注释。有多行注释内容时，使用多个单行注释。
 ``` javascript
@@ -528,7 +545,7 @@ var hasMoreCommands = false;
 ``` javascript
 // good example
 /**
- * @effect 取得数组中的最小值
+ * @function 取得数组中的最小值
  * @param  {Array}
  * @return {number}
  */
@@ -554,5 +571,5 @@ function getMin(arr) {
 // TODO: 有功能待实现。此时需要对将要实现的功能进行简单说明。
 // FIXME: 该处代码运行没问题，但可能由于时间赶或者其他原因，需要优化。
 // HACK: 为修正某些问题而写的不太好或者使用了某些诡异手段的代码。
-// PS: 存在一些坑要特别说明的，避免后人又踩
+// XXX: 存在一些坑要特别说明的，避免后人又踩
 ```
